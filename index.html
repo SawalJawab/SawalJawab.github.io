@@ -1,0 +1,35 @@
+---
+layout: default
+title: Sawal Jawab – Hindi Question Answer Website
+description: Hindi me HTML, Math, Islam, Education aur General Knowledge se jude sawalon ke sahi aur saral jawab.
+---
+
+<section class="hero">
+  <h1>सवाल जवाब – हिंदी Question Answer प्लेटफॉर्म</h1>
+  <p>यहाँ आपको HTML, Math, Islam, Education और General Knowledge से जुड़े सवालों के आसान और सही जवाब मिलते हैं।</p>
+</section>
+
+<section class="latest-questions">
+  <h2>नए सवाल और जवाब</h2>
+
+  {% assign questions = site.questions | sort: 'date' | reverse %}
+
+  {% for question in questions limit:10 %}
+    <article class="question-item">
+      <h3>
+        <a href="{{ question.url }}">{{ question.title }}</a>
+      </h3>
+
+      {% if question.excerpt %}
+        <p>{{ question.excerpt | strip_html | truncate: 150 }}</p>
+      {% endif %}
+
+      <a class="read-more" href="{{ question.url }}">पूरा जवाब पढ़ें →</a>
+    </article>
+  {% endfor %}
+</section>
+
+<section class="cta">
+  <h2>आपका सवाल क्या है?</h2>
+  <p>हमारा उद्देश्य है हर सवाल का सही और भरोसेमंद जवाब देना।</p>
+</section>
