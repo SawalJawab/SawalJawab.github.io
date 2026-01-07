@@ -1,0 +1,101 @@
+# ===============================
+# Site Basic Settings
+# ===============================
+title: SawalJawab
+tagline: Sawal Jawab – Hindi Question Answer Platform
+description: >
+  SawalJawab ek fast aur SEO friendly Hindi Question Answer website hai
+  jahan HTML, Math, Islam, Education aur General Knowledge se jude sawalon
+  ke sahi aur saral jawab milte hain.
+
+url: "https://sawaljawab.github.io"
+baseurl: ""   # GitHub Pages ke liye empty hi rakho
+
+language: hi-IN
+timezone: Asia/Kolkata
+
+# ===============================
+# Author Info (SEO + Schema)
+# ===============================
+author:
+  name: SawalJawab Team
+  email: support@sawaljawab.github.io
+
+# ===============================
+# Build & Performance
+# ===============================
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# GitHub Pages compatible plugins only
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# ===============================
+# Collections (Questions System)
+# ===============================
+collections:
+  questions:
+    output: true
+    permalink: /:title/
+
+# ===============================
+# Defaults (Auto SEO for Questions)
+# ===============================
+defaults:
+  - scope:
+      path: ""
+      type: questions
+    values:
+      layout: question
+      sitemap: true
+
+# ===============================
+# SEO Settings
+# ===============================
+seo:
+  type: WebSite
+  name: SawalJawab
+  headline: Hindi Question Answer Website
+  description: Hindi me sawalon ke jawab – education, tech, islam, math
+  language: hi-IN
+
+# ===============================
+# Sitemap & Feed
+# ===============================
+sitemap:
+  changefreq: weekly
+  priority: 0.8
+
+feed:
+  path: feed.xml
+
+# ===============================
+# Exclude (Speed Boost)
+# ===============================
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+
+# ===============================
+# Pagination (Future Ready)
+# ===============================
+paginate: 10
+paginate_path: "/page/:num/"
+
+# ===============================
+# Security & Clean URLs
+# ===============================
+permalink: pretty
